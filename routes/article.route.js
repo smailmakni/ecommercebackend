@@ -16,7 +16,7 @@ router.post('/',async(req,res)=>{
     const newArticle=new Article(req.body);
     try{
         await newArticle.save();
-        res.status(200).json(newa);
+        res.status(200).json(newArticle);
     }catch(error){
         res.status(404).json({message:error.message});
     }
