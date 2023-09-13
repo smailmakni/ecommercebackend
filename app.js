@@ -4,6 +4,7 @@ const dotenv =require('dotenv')
 const categorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
+const userRouter = require("./routes/user.route")
 const cors=require('cors')
 dotenv.config()
 const app = express();
@@ -29,4 +30,5 @@ app.use('/api/payement', paymentRouter);
 app.use('/api/categories', categorieRouter);
 app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter);
+app.use('/api/users', userRouter);
 module.exports=app;
