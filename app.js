@@ -5,6 +5,7 @@ const categorieRouter =require("./routes/categorie.route")
 const scategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
 const userRouter = require("./routes/user.route")
+// const verifyTokenRouter= require("./Middleware/verifytoken")
 const cors=require('cors')
 dotenv.config()
 const app = express();

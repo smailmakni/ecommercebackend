@@ -2,8 +2,10 @@ var express=require('express');
 var router=express.Router();
 const Article=require('../models/article');
 const Scategorie=require('../models/scategorie');
+const {verifyToken} =require("../Middleware/verifytoken")
+const {authorizeRoles} =require("../Middleware/authorizeRoles")
 
-router.get('/',async(req,res)=>{
+router.get('/',verifyToken,authorizeRoles("admin","user"),async(req,res)=>{
     try{
     const art=await Article.find().populate("scategorieID").exec();
     res.status(200).json(art);
